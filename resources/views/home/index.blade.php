@@ -11,7 +11,7 @@
 <div id="app">
     <h1>Home page</h1>
 
-    <example-component></example-component>
+    <most-popular-series></most-popular-series>
 </div>
 
 <script src="{{ asset('js/app.js') }}"></script>

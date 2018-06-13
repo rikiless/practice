@@ -16,10 +16,19 @@
 
 <script>
     import bootstrap from 'bootstrap';
-    // import 'bootstrap/dist/css/bootstrap.css';
 
     export default {
+        data() {
+            return {
+                series: [],
+                activeShow: false,
+            }
+        },
+
         mounted() {
+            axios.get('/data')
+                .then(response => this.series = response.data);
+
             console.log('Component mounted.')
         }
     }
