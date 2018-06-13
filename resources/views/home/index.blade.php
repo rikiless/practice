@@ -9,8 +9,6 @@
 <body>
 
 <div id="app">
-    <h1>Home page</h1>
-
     <most-popular-series></most-popular-series>
 </div>
 

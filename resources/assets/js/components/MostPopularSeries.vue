@@ -2,11 +2,35 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                <h1 class="mt-5 mb-5">Practice</h1>
+
                 <div class="card card-default">
-                    <div class="card-header">Example Component</div>
+                    <div class="card-header">Most Popular TV Shows</div>
 
                     <div class="card-body">
-                        I'm an example component.
+                        <div class="list-group">
+                            <a v-for="show in series"
+                               v-on:mouseover="selectShow(show)"
+                               v-text="show.name"
+                               class="list-group-item list-group-item-action"
+                               href="#"></a>
+                        </div>
+
+                        <button type="button" class="btn btn-primary mt-3" v-on:click="cancelShow()" v-bind:disabled="! activeShow">Cancel</button>
+                    </div>
+                </div>
+
+                <div class="mt-4 card card-default">
+                    <div class="card-header">
+                        <div v-if="activeShow" v-text="activeShow.name"></div>
+                        <div v-else>Select Favourite TV Show</div>
+                    </div>
+
+                    <div class="card-body" v-if="activeShow">
+                        <img :src="activeShow.image" alt="" class="img-thumbnail float-right">
+                        <p><b>Status:</b> {{ activeShow.status }}</p>
+                        <p><b>Network:</b> {{ activeShow.network }}</p>
+                        <p><b>IMDB:</b> <a :href="activeShow.imdb" v-text="activeShow.imdb"></a></p>
                     </div>
                 </div>
             </div>
@@ -25,11 +49,26 @@
             }
         },
 
+        methods: {
+            selectShow(show) {
+                this.activeShow = show;
+            },
+
+            cancelShow() {
+                this.activeShow = false;
+
+            }
+        },
+
         mounted() {
             axios.get('/data')
                 .then(response => this.series = response.data);
-
-            console.log('Component mounted.')
         }
     }
 </script>
+
+<style>
+    .card-body img {
+        width: 200px;
+    }
+</style>
