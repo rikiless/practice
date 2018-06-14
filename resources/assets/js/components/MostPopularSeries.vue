@@ -5,12 +5,12 @@
                 <h1 class="mt-5 mb-5">Practice</h1>
 
                 <div class="card card-default">
-                    <div class="card-header">Most Popular TV Shows</div>
+                    <div class="card-header">Select Your Favorite TV Show</div>
 
                     <div class="card-body">
                         <div class="list-group">
                             <a v-for="show in series"
-                               v-on:mouseover="selectShow(show)"
+                               v-on:mouseover="featureShow(show)"
                                v-text="show.name"
                                class="list-group-item list-group-item-action"
                                href="#"></a>
@@ -20,10 +20,9 @@
                     </div>
                 </div>
 
-                <div class="mt-4 card card-default">
+                <div class="mt-4 card card-default" v-if="activeShow">
                     <div class="card-header">
-                        <div v-if="activeShow" v-text="activeShow.name"></div>
-                        <div v-else>Select Favourite TV Show</div>
+                        <div v-text="activeShow.name"></div>
                     </div>
 
                     <div class="card-body" v-if="activeShow">
@@ -50,14 +49,13 @@
         },
 
         methods: {
-            selectShow(show) {
+            featureShow: _.debounce(function(show) {
                 this.activeShow = show;
-            },
+            }, 500),
 
             cancelShow() {
                 this.activeShow = false;
-
-            }
+            },
         },
 
         mounted() {
