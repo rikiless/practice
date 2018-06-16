@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('most-popular-series', require('./components/MostPopularSeries.vue'));
+Vue.component('form-component', require('./components/FormComponent.vue'));
 
 const app = new Vue({
     el: '#app'

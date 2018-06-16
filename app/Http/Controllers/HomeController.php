@@ -11,6 +11,11 @@ class HomeController extends Controller
         return view('home.index');
     }
 
+    public function form()
+    {
+        return view('home.form');
+    }
+
     public function resource()
     {
         return [
