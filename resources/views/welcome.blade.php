@@ -91,8 +91,9 @@
                 </div>
 
                 <div class="links" style="margin-top: 30px;">
-                    <a href="/home">Debounce</a>
+                    <a href="/debounce">Debounce</a>
                     <a href="/form">Form</a>
+                    <a href="/tooltips">Tooltips</a>
                 </div>
             </div>
         </div>

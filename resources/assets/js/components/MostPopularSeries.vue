@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h1 class="mt-5 mb-5">Practice</h1>
+                <h1 class="mt-5 mb-5">Practice - Debounce</h1>
 
                 <div class="card card-default">
                     <div class="card-header">Select Your Favorite TV Show</div>

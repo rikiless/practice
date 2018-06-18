@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('home', 'HomeController@index');
+Route::get('debounce', 'HomeController@debounce');
 Route::get('form', 'HomeController@form');
+Route::get('tooltips', 'HomeController@tooltips');
 
 Route::get('data', 'HomeController@resource');

@@ -1,5 +1,5 @@
 @extends ('layouts.master')
 
 @section ('content')
-	<form-component></form-component>
+    <most-popular-series></most-popular-series>
 @endsection

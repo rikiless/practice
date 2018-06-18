@@ -10,7 +10,9 @@
 <body>
 
 <div id="app">
-    <most-popular-series></most-popular-series>
+
+    @yield('content')
+
 </div>
 
 <script src="{{ asset('js/app.js') }}"></script>

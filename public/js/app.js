@@ -18005,6 +18005,7 @@ window.Vue = __webpack_require__(38);
 
 Vue.component('most-popular-series', __webpack_require__(40));
 Vue.component('form-component', __webpack_require__(48));
+Vue.component('tooltips', __webpack_require__(59));
 
 var app = new Vue({
   el: '#app'
@@ -47765,7 +47766,7 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row justify-content-center" }, [
       _c("div", { staticClass: "col-md-8" }, [
-        _c("h1", { staticClass: "mt-5 mb-5" }, [_vm._v("Practice")]),
+        _c("h1", { staticClass: "mt-5 mb-5" }, [_vm._v("Practice - Debounce")]),
         _vm._v(" "),
         _c("div", { staticClass: "card card-default" }, [
           _c("div", { staticClass: "card-header" }, [
@@ -47862,10 +47863,6 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(57)
-}
 var normalizeComponent = __webpack_require__(13)
 /* script */
 var __vue_script__ = __webpack_require__(49)
@@ -47874,7 +47871,7 @@ var __vue_template__ = __webpack_require__(51)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -47927,10 +47924,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -47950,14 +47943,6 @@ Vue.directive('tooltip', {
         return {};
     },
     mounted: function mounted() {
-        document.querySelectorAll('[data-tooltip]').forEach(function (el) {
-            new __WEBPACK_IMPORTED_MODULE_1_tooltip_js__["a" /* default */](el, {
-                placement: el.dataset.tooltipPlacement || 'top',
-                title: el.dataset.tooltip,
-                template: '<div class="tooltip-custom" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
-            });
-        });
-
         __WEBPACK_IMPORTED_MODULE_0_sweetalert___default()('Hello World', 'My name is Riki!', 'success');
 
         // swal("Are you sure you want to do this?", {
@@ -47983,60 +47968,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("h1", { staticClass: "mt-5 mb-5" }, [
-          _vm._v("Practice - Form, Swal, Modal & Tooltip")
-        ]),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto consequatur deserunt dolorem dolorum libero maiores molestiae nesciunt nisi nulla obcaecati odio odit omnis quam quod suscipit, vel, velit, voluptatibus? "
-          ),
-          _c(
-            "span",
-            {
-              directives: [
-                {
-                  name: "tooltip",
-                  rawName: "v-tooltip:bottom",
-                  value: "Here is another way to make a tooltip.",
-                  expression: "'Here is another way to make a tooltip.'",
-                  arg: "bottom"
-                }
-              ]
-            },
-            [_vm._v("Hover over me")]
-          ),
-          _vm._v(".")
-        ])
-      ])
-    ])
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", [
-      _vm._v(
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto consequatur deserunt dolorem dolorum libero maiores molestiae nesciunt nisi nulla obcaecati odio odit omnis quam quod suscipit, vel, velit, voluptatibus? "
-      ),
-      _c(
-        "span",
-        {
-          attrs: {
-            "data-tooltip": "Hello World!",
-            "data-tooltip-placement": "bottom"
-          }
-        },
-        [_vm._v("Hover over me")]
-      ),
-      _vm._v(".")
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("h1", { staticClass: "mt-5 mb-5" }, [
+            _vm._v("Practice - Form, Swal & Modal")
+          ])
+        ])
+      ])
     ])
   }
 ]
@@ -48649,23 +48595,76 @@ var _initialiseProps = function _initialiseProps() {
 
 
 /***/ }),
-/* 57 */
+/* 57 */,
+/* 58 */,
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(60)
+}
+var normalizeComponent = __webpack_require__(13)
+/* script */
+var __vue_script__ = __webpack_require__(62)
+/* template */
+var __vue_template__ = __webpack_require__(63)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Tooltips.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-10147bf2", Component.options)
+  } else {
+    hotAPI.reload("data-v-10147bf2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(58);
+var content = __webpack_require__(61);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(44)("017fa99c", content, false, {});
+var update = __webpack_require__(44)("d09cabf4", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-70be8f72\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FormComponent.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-70be8f72\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FormComponent.vue");
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10147bf2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tooltips.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-10147bf2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tooltips.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -48675,7 +48674,7 @@ if(false) {
 }
 
 /***/ }),
-/* 58 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(43)(false);
@@ -48687,6 +48686,124 @@ exports.push([module.i, "\n.tooltip-custom {\n    background: #000;\n    color: 
 
 // exports
 
+
+/***/ }),
+/* 62 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tooltip_js__ = __webpack_require__(56);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+Vue.directive('tooltip', {
+    bind: function bind(el, bindings) {
+        new __WEBPACK_IMPORTED_MODULE_0_tooltip_js__["a" /* default */](el, {
+            placement: bindings.arg || 'top',
+            title: bindings.value,
+            template: '<div class="tooltip-custom" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+        });
+    }
+});
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        document.querySelectorAll('[data-tooltip]').forEach(function (el) {
+            new __WEBPACK_IMPORTED_MODULE_0_tooltip_js__["a" /* default */](el, {
+                placement: el.dataset.tooltipPlacement || 'top',
+                title: el.dataset.tooltip,
+                template: '<div class="tooltip-custom" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>'
+            });
+        });
+    }
+});
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("h1", { staticClass: "mt-5 mb-5" }, [_vm._v("Practice - Tooltips")]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto consequatur deserunt dolorem dolorum libero maiores molestiae nesciunt nisi nulla obcaecati odio odit omnis quam quod suscipit, vel, velit, voluptatibus? "
+          ),
+          _c(
+            "span",
+            {
+              directives: [
+                {
+                  name: "tooltip",
+                  rawName: "v-tooltip:bottom",
+                  value: "Here is another way to make a tooltip.",
+                  expression: "'Here is another way to make a tooltip.'",
+                  arg: "bottom"
+                }
+              ]
+            },
+            [_vm._v("Hover over me")]
+          ),
+          _vm._v(".")
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _vm._v(
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto consequatur deserunt dolorem dolorum libero maiores molestiae nesciunt nisi nulla obcaecati odio odit omnis quam quod suscipit, vel, velit, voluptatibus? "
+      ),
+      _c(
+        "span",
+        {
+          attrs: {
+            "data-tooltip": "Hello World!",
+            "data-tooltip-placement": "bottom"
+          }
+        },
+        [_vm._v("Hover over me")]
+      ),
+      _vm._v(".")
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-10147bf2", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

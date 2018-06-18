@@ -6,14 +6,19 @@ use App\Show;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function debounce()
     {
-        return view('home.index');
+        return view('home.debounce');
     }
 
     public function form()
     {
         return view('home.form');
+    }
+
+    public function tooltips()
+    {
+        return view('home.tooltip');
     }
 
     public function resource()
