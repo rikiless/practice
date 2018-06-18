@@ -36,7 +36,9 @@
                                         type="text"
                                         name="email"
                                         placeholder="Type Your Email"
-                                        v-model="form.email">
+                                        v-model="form.email"
+                                        @keydown="delete errors.email"
+                                >
                                 <span
                                         class="invalid-feedback"
                                         v-text="errors.email[0]"
@@ -50,7 +52,9 @@
                                         v-model="form.question"
                                         rows="5"
                                         placeholder="Type your question here"
-                                        name="question">
+                                        name="question"
+                                        v-on:keydown="delete errors.question"
+                                >
                                 </textarea>
                                 <span
                                         class="invalid-feedback"
