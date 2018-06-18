@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Show;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,15 @@ class HomeController extends Controller
     public function form()
     {
         return view('home.form');
+    }
+
+    public function store(Request $request)
+    {
+        return $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'question' => 'required'
+        ]);
     }
 
     public function tooltips()
