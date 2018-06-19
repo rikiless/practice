@@ -77,21 +77,10 @@
 
 <script>
     import swal from 'sweetalert';
-    import Tooltip from 'tooltip.js';
     import VModal from 'vue-js-modal';
 
     Vue.use(VModal);
-
-    Vue.directive('tooltip', {
-        bind(el, bindings) {
-            new Tooltip(el, {
-                placement: bindings.arg || 'top',
-                title: bindings.value,
-                template: '<div class="tooltip-custom" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
-            });
-        }
-    });
-
+    
     export default {
         data() {
             return {
