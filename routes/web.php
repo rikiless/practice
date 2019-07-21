@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('debounce', 'HomeController@debounce');
 Route::get('tooltips', 'HomeController@tooltips');
+Route::get('element', 'HomeController@element');
 
 Route::get('form', 'HomeController@form');
 Route::post('form', 'HomeController@store');

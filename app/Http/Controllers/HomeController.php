@@ -12,6 +12,11 @@ class HomeController extends Controller
         return view('home.debounce');
     }
 
+    public function element()
+    {
+        return view('home.element');
+    }
+
     public function form()
     {
         return view('home.form');

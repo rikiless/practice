@@ -94,6 +94,7 @@
                     <a href="/debounce">Debounce</a>
                     <a href="/form">Form</a>
                     <a href="/tooltips">Tooltips</a>
+                    <a href="/element">Show an Element When Another is Hidden</a>
                 </div>
             </div>
         </div>

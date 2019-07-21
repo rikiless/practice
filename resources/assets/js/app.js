@@ -18,6 +18,7 @@ window.Vue = require('vue');
 Vue.component('most-popular-series', require('./components/MostPopularSeries.vue'));
 Vue.component('form-component', require('./components/FormComponent.vue'));
 Vue.component('tooltips', require('./components/Tooltips.vue'));
+Vue.component('visible', require('./components/Visible.vue'));
 
 const app = new Vue({
     el: '#app'
